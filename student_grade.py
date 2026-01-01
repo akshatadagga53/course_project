@@ -1,31 +1,31 @@
 import sys
 
-print("=== Student Grade Calculator ===")
+def calculate_average(marks):
+    return sum(marks) / len(marks)
 
-# Validate arguments
-if len(sys.argv) != 4:
-    print("Usage: python student_grade.py <Name> <Course> <Semester>")
-    sys.exit(1)
+def assign_grade(avg):
+    if avg >= 90:
+        return "A"
+    elif avg >= 75:
+        return "B"
+    elif avg >= 60:
+        return "C"
+    else:
+        return "F"
 
-name = sys.argv[1]
-course = sys.argv[2]
-semester = sys.argv[3]
+def main():
+    print("=== Student Grade Calculator ===")
 
-print("Student Name:", name)
-print("Course:", course)
-print("Semester:", semester)
+    if len(sys.argv) != 4:
+        print("Usage: python student_grade.py <Name> <Course> <Semester>")
+        sys.exit(1)
 
-# Example grade logic
-marks = 85
+    name = sys.argv[1]
+    course = sys.argv[2]
+    semester = sys.argv[3]
 
-if marks >= 90:
-    grade = "A+"
-elif marks >= 75:
-    grade = "A"
-elif marks >= 60:
-    grade = "B"
-else:
-    grade = "C"
+    print(name, course, semester)
 
-print("Marks:", marks)
-print("Grade:", grade)
+# ✅ ONLY this runs main
+if __name__ == "__main__":
+    main()
