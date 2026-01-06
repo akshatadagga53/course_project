@@ -1,33 +1,47 @@
-import sys
+# Student Grade Calculator
 
-def calculate_average(marks):
-    return sum(marks) / len(marks)
 
-def assign_grade(avg):
-    if avg >= 90:
+def calculate_grade(avg):
+    if 90 <= avg <= 100:
+        return "S"
+    elif 80 <= avg <= 89:
         return "A"
-    elif avg >= 75:
+    elif 65 <= avg <= 79:
         return "B"
-    elif avg >= 60:
+    elif 50 <= avg <= 64:
         return "C"
+    elif 40 <= avg <= 49:
+        return "D"
     else:
         return "F"
 
 def main():
-    print("=== Student Grade Calculator ===")
+    # Accept student details
+    name = "sri gouri"
+    department = "BCA"
+    semester = 3
 
-    if len(sys.argv) != 4:
-        print("Usage: python student_grade.py <Name> <Course> <Semester>")
-        sys.exit(1)
+    marks = []
+    sample_mark=[75,82,68]
+    
+    for i in range(len(sample_mark)):
+        marks.append(sample_mark[i])
+        
+        avg = sum(marks) / len(marks)
 
-    name = sys.argv[1]
-    course = sys.argv[2]
-    semester = sys.argv[3]
+    
 
-    print(name, 
-    print course, 
-    print semester)
+    # Determine grade
+    grade = calculate_grade(avg)
 
-# ✅ ONLY this runs main
+    # Display student details and grade
+    print("\n--- Student Report ---")
+    print(f"Name       : {name}")
+    print(f"Department : {department}")
+    print(f"Semester   : {semester}")
+    print(f"Marks      : {marks}")
+    print(f"Average    : {avg:.2f}")
+    print(f"Grade      : {grade}")
+
 if __name__ == "__main__":
     main()
