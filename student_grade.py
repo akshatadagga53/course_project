@@ -24,7 +24,9 @@ def main():
     course = sys.argv[2]
     semester = sys.argv[3]
 
-    print(name, course, semester)
+    print(name, 
+    print course, 
+    print semester)
 
 # ✅ ONLY this runs main
 if __name__ == "__main__":
